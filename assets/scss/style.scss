@@ -1,0 +1,164 @@
+
+$grey-co: #505050;
+$grey-light-co: #828282;
+$blue-co: #024F9E;
+$blue-light-co: #0A7EF5;
+$orange-co:#FC8F00;
+
+$size1: 48px;
+$size15:40px;
+$size2: 32px;
+$size3: 24px;
+$size35: 18px;
+
+$size1mb: 24px;
+$size2mb: 18px;
+$size3mb: 12px;
+$size35mb: 9px;
+
+$sizedf:16px;
+
+h1{
+  font-size: $size1 !important;
+}
+h2{
+  font-size: $size15 !important;
+}
+h3{
+  font-size: $size2 !important;
+}
+
+@mixin line-limit($num-line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num-line;
+  -webkit-box-orient: vertical;
+}
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/side-bar";
+@import "layout/owlcarosel";
+
+
+@import "reponsive";
+
+body {
+  padding: 0;
+  margin-top: 135px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  @media (max-width: 1024px) { 
+    margin-top: 90px;
+}
+}
+
+p.detail{
+  font-size: $size3;
+  @media (max-width: 1024px) { 
+      font-size: $sizedf;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover{
+    color: black;
+  }
+}
+
+a.current-page {
+  text-decoration: underline;
+  -webkit-text-underline-position: under;
+  -ms-text-underline-position: below;
+  text-underline-position: under;
+}
+
+.blue-co {
+  color: $blue-co;
+}
+.blue-light-co {
+  color: $blue-light-co;
+}
+.grey-co {
+  color: $grey-co;
+}
+.grey-light-co {
+  color: $grey-light-co;
+}
+.orange-co {
+  color: $orange-co;
+}
+.co-hv:hover {
+  color: $blue-light-co;
+}
+.bg-hv:hover {
+  background-color: $blue-light-co;
+}
+
+
+
+$hv-scale:1.05;
+.imghover {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale($hv-scale);
+  }
+}
+
+.imghover-op {
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.pagenavi{
+  line-height: 2;
+  margin-top: $size3;
+  *{
+    margin-right: 28px;    
+  }
+  span.current{
+    background: $blue-co;
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: white;
+  }
+  .next,.prev {
+    color: $blue-co;
+  }
+  .prev-fake{
+    cursor: default;
+  }
+  a{
+    color: #515151;
+  }
+}
+
+.wpcf7-response-output{
+  font-weight: bold;
+  color: #09c750;
+  border: none !important;
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.owl-carousel .owl-item img {
+  width: 100%;
+  height: 100%;
+}
