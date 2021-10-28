@@ -1,3 +1,20 @@
+<?php
+$args = array(
+    'post_type' => 'san_pham',
+    'orderby' => 'date',
+    'order' => 'ASC',
+);
+$the_query_product = new WP_Query($args);
+
+$args = array(
+    'post_type' => 'dich_vu',
+    'orderby' => 'date',
+    'order' => 'ASC',
+);
+$the_query_dv = new WP_Query($args);
+
+?>
+
 <a href="#">
     <div id="bottom_to_top">
         <i class="fas fa-arrow-up text-white"></i>
@@ -9,35 +26,85 @@
     </div>
 </a>
 <div id="footer">
-    <div class="container d-flex justify-content-between">
-        <div class="fLeft">
-            <div class="d-flex">
-                <a href="<?php echo home_url(); ?>/">
-                    <img style="width: 32px;height: 32px;"
-                        src="<?php bloginfo('template_directory'); ?>/assets/images/logo.png" alt="" class="logo me-2">
-                </a>
-                <h2 class="company-name fw-bold m-0">無線プラス株式会社</h2>
+    <div class="container">
+        <div class="row row-cols-lg-4 row-cols-md-1">
+            <div class="col">
+                <div class="top">
+                    <a href="<?php echo home_url(); ?>/">
+                        <img style="width: 144px;height: 76px;"
+                            src="<?php bloginfo('template_directory'); ?>/assets/images/logo.png"
+                            class="logo me-2 mb-2">
+                    </a>
+                    <a href="https://goo.gl/maps/T9QY8amwqE6KRxuH6" target="_blank" class=" d-block address"><i
+                            class="fas fa-map-marker-alt me-2 orange-co"></i>Địa chỉ: 37
+                        An Nhơn 11, Đà Nẵng</a>
+                    <a href="tel:0905028646" class=" d-block tel"><i class="fas fa-phone-alt me-2 orange-co"></i>Liên
+                        hệ:
+                        0905028646</a>
+                    <a href="mailto:khoinguyenwater@gmail.com" class=" d-block email"><i
+                            class="far fa-envelope me-2 orange-co"></i>Email:
+                        khoinguyenwater@gmail.com</a>
+                </div>
+                <div class="bottom">
+                    <iframe style="max-width: 100%;"
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKhoiNguyenWater&tabs=timeline&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=713028052597846"
+                        width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
             </div>
-            <a href="https://goo.gl/maps/UXPjzMBG7gHzpk3P7" target="_blank"
-                class=" d-block address text-black">〒555-0024　大阪府大阪市西淀川区野里
-                1-21-3</a>
-            <a href="tel:070-9003-3177" class=" d-block tel text-black fw-bold">TEL. <span
-                    class="red-co fw-bold">070-9003-3177</span>
-            </a>
-            <a href="mailto:musenplus@gmail.com" class=" d-block email text-black">Eメール: musenplus@gmail.com</a>
+            <div class="col">
+                <h4>Danh mục</h4>
+                <ul class="f-column-nav">
+                    <li><a data-navurl="trang-chu" class="" href="<?php echo home_url(); ?>/">Trang
+                            chủ</a>
+                    </li>
+                    <li><a data-navurl="gioi-thieu" class="" href="<?php echo home_url(); ?>/gioi-thieu">Giới
+                            thiệu</a></li>
+                    <li><a data-navurl="dich-vu" class="" href="<?php echo home_url(); ?>/dich-vu">Dịch vụ</a>
+                    </li>
+                    <li><a data-navurl="cac-dong-san-pham" class=""
+                            href="<?php echo home_url(); ?>/cac-dong-san-pham">Các dòng sản phẩm</a>
+                    </li>
+                    <li><a data-navurl="bai-viet" class="" href="<?php echo home_url(); ?>/bai-viet">Bài
+                            viết</a>
+                    </li>
+                    <li><a data-navurl="lien-he" class="" href="<?php echo home_url(); ?>/lien-he">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Dịch vụ</h4>
+                <ul class="f-column-nav">
+                    <?php $count = 1;  ?>
+                    <?php while ($the_query_dv->have_posts()) : $the_query_dv->the_post(); ?>
+                    <li><a
+                            href="<?php echo home_url() . '/dich-vu?dv=dv' . $count ?>"><?php echo get_the_title(); ?></a>
+                    </li>
+                    <?php $count++; ?>
+                    <?php endwhile; ?>
+                    <?php wp_reset_query(); ?>
+                </ul>
+            </div>
+            <div class=" col">
+                <h4>Các dòng sản phẩm</h4>
+                <ul class="f-column-nav">
+                    <ul class="f-column-nav">
+                        <?php $count = 1;  ?>
+                        <?php while ($the_query_product->have_posts()) : $the_query_product->the_post(); ?>
+                        <li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title(); ?></a>
+                        </li>
+                        <?php $count++; ?>
+                        <?php endwhile; ?>
+                        <?php wp_reset_query(); ?>
+                    </ul>
+
+                </ul>
+            </div>
         </div>
-        <div class="fRight d-xxl-flex d-none align-items-center ">
-            <ul class="fNav d-flex justify-content-lg-between">
-                <li><a data-navurl="home" class=" red-co red-co-hv " href="<?php echo home_url(); ?>/">ホーム</a></li>
-                <li><a data-navurl="product-list" class="yellow-co yellow-co-hv"
-                        href="<?php echo home_url(); ?>/product-list">製品情報</a></li>
-                <li><a data-navurl="application" class="purple-co purple-co-hv"
-                        href="<?php echo home_url(); ?>/application">用途事例</a></li>
-                <li><a data-navurl="company" class="green-co green-co-hv"
-                        href="<?php echo home_url(); ?>/company">会社概要</a></li>
-                <li><a data-navurl="contact" class="blue-co blue-co-hv"
-                        href="<?php echo home_url(); ?>/contact">問い合わせ</a></li>
-            </ul>
+
+        <div class="text-center text-white mt-3 pt-3 border-top" style="border-color: #FFFFFF1A !important;">
+            © Copyright KhoiNguyenWater. Design by BIti.vn
         </div>
     </div>
 </div>
@@ -47,6 +114,7 @@
     $post_slug = $post->post_name;
     ?>
 var current_slug = '<?php echo $post_slug; ?>'
+var id_dv = '<?php echo $_GET['dv'] ? $_GET['dv'] : ""  ?>'
 </script>
 <?php wp_footer(); ?>
 </div>

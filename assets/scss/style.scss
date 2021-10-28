@@ -1,9 +1,12 @@
 
 $grey-co: #505050;
 $grey-light-co: #828282;
+$grey-lighter-co: #dbdbdb;
 $blue-co: #024F9E;
 $blue-light-co: #0A7EF5;
 $orange-co:#FC8F00;
+$orange-light-co:#ffab3d;
+$mint-co : #F9FBFF;
 
 $size1: 48px;
 $size15:40px;
@@ -12,6 +15,7 @@ $size3: 24px;
 $size35: 18px;
 
 $size1mb: 24px;
+$size15mb: 20px;
 $size2mb: 18px;
 $size3mb: 12px;
 $size35mb: 9px;
@@ -27,6 +31,33 @@ h2{
 h3{
   font-size: $size2 !important;
 }
+h4{
+  font-size: $size3 !important;
+}
+h5{
+  font-size: $size35 !important;
+
+}
+@media (max-width: 991.98px) {
+  h1{
+    font-size: $size1mb !important;
+  }
+  h2{
+    font-size: $size15mb !important;
+  }
+  h3{
+    font-size: $size2mb !important;
+  }
+  h4{
+    font-size: $size2mb !important;
+  }
+  h5{
+    font-size: $size2mb !important;
+  }
+
+}
+
+
 
 @mixin line-limit($num-line) {
   overflow: hidden;
@@ -41,12 +72,19 @@ h3{
 @import "layout/side-bar";
 @import "layout/owlcarosel";
 
+@import "pages/home";
+@import "pages/intro";
+@import "pages/service";
+@import "pages/product-list";
+@import "pages/detail-product";
+@import "pages/posts";
+@import "pages/contact2";
 
 @import "reponsive";
 
 body {
   padding: 0;
-  margin-top: 135px;
+  margin-top: 138px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
@@ -80,12 +118,43 @@ a {
   }
 }
 
+
 a.current-page {
-  text-decoration: underline;
-  -webkit-text-underline-position: under;
-  -ms-text-underline-position: below;
-  text-underline-position: under;
+  font-weight: bold;
+  color: black !important;
+  position: relative;
+  // text-decoration: underline;
+  // -webkit-text-underline-position: under;
+  // -ms-text-underline-position: below;
+  // text-underline-position: under;
 }
+
+// .container{
+//   width: 1248px !important;
+// }
+
+#header,#mb-menu{
+  a.current-page {
+    &::after{
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 100%;
+      left: 0;
+      bottom: -10px;
+      background: $blue-co;
+    }
+  }
+}
+
+#footer{
+  a.current-page {
+    color: $orange-co !important;
+    font-weight: normal;
+  }
+}
+
+
 
 .blue-co {
   color: $blue-co;
@@ -102,6 +171,11 @@ a.current-page {
 .orange-co {
   color: $orange-co;
 }
+.blue-bg{
+  background: $blue-co;
+}
+
+
 .co-hv:hover {
   color: $blue-light-co;
 }
@@ -109,10 +183,57 @@ a.current-page {
   background-color: $blue-light-co;
 }
 
+.btn-cus{
+  font-weight: bold;
+  padding: $size35 $size1 ;
+  @media (max-width: 991.98px) {
+    padding: $size35mb $size1mb ;
+}
+  background: $orange-co;
+  border-radius: 6px;
+  box-shadow: 0 5px 3px 0px #8484844d;
+  a{
+    color: white;
+  }
+  &:hover{
+    background:$orange-light-co;
+  }
+  &:focus{
+  }
+}
+.btn-cus2
+{
+  font-weight: bold;
+  padding: $size35 $size1 ;
+  @media (max-width: 991.98px) {
+    padding: $size35mb $size1mb ;
+}
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 5px 3px 0px #8484844d;
+  a{
+    color: $blue-co;
+  }
+  &:hover{
+    background:rgb(247, 247, 247);
+  }
+  &:focus{
+  }
+}
 
+.mb-4mb{
+  margin-bottom: 12px;
+}
 
-$hv-scale:1.05;
-.imghover {
+.under-line{
+  text-decoration: underline;
+  -webkit-text-underline-position: under;
+  -ms-text-underline-position: below;
+  text-underline-position: under;
+}
+
+$hv-scale:1.03;
+.cardhover {
   transition: transform 0.3s ease;
   &:hover {
     transform: scale($hv-scale);
@@ -121,9 +242,10 @@ $hv-scale:1.05;
 
 .imghover-op {
   &:hover {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
+
 
 .pagenavi{
   line-height: 2;

@@ -1,5 +1,22 @@
 jQuery(function ($) {
   $(document).ready(function () {
+    // avtive nav tab js 
+    $(`[data-bs-target='#${id_dv}']`).click()
+
+    // home colapse change btn
+    $('.card-intro i.fas').click(function () {
+      console.log($(this).attr('aria-expanded'));
+      if ($(this).attr('aria-expanded') == 'true') {
+        $(this).toggleClass('fa-plus fa-minus');
+        $(this).css("transform", "rotate(180deg)");
+
+      } else {
+        // console.log('sadsds');
+        $(this).toggleClass('fa-minus fa-plus');
+        $(this).css("transform", "rotate(0)");
+
+      }
+    })
 
     // mobile menu
     var mbMenu = document.getElementById("mb-menu");
@@ -21,7 +38,7 @@ jQuery(function ($) {
     // active current page
     $("a[data-navUrl]").each(function () {
       if ($(this).data("navurl") == current_slug) {
-        $(this).addClass("current-page fw-bold");
+        $(this).addClass("current-page");
       }
     });
 

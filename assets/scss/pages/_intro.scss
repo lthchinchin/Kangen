@@ -1,0 +1,132 @@
+.content-nav{
+    background-color: $blue-co;
+    .nav-tab{
+        .tab-intro-cus{
+            cursor: pointer;
+            color: white;
+            padding : 30px 18px;
+            font-weight: bold;
+            user-select: none; /* standard syntax */
+            -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+            -moz-user-select: none; /* mozilla browsers */
+            -khtml-user-select: none; /* webkit (konqueror) browsers */
+            -ms-user-select: none; /* IE10+ */
+            @media (max-width: 767.98px) {
+                padding : 18px 9px;
+            }
+        }
+        h4.active{
+            background-color: white;
+                color: $blue-co !important;
+        }
+    }
+}
+#intro-page{
+    section.content{
+        .content-place{
+            padding: 80px 0;
+
+            @media (max-width: 767.98px) {
+                padding: 40px 0;
+            }
+            h2,h4{
+                font-weight: bold !important;
+                }
+            #tab1{
+                h2{
+                    margin-bottom: $size3;
+                    @media (max-width: 767.98px) {
+                        margin-bottom: $size3mb;
+                    }
+                }
+                p{
+                    margin-bottom: $size2;
+                    @media (max-width: 767.98px) {
+                        margin-bottom: $size2mb;
+                    }
+                }
+                img.boss{
+                    margin-bottom: 80px;
+                    @media (max-width: 767.98px) {
+                        margin-bottom: 40px;
+                    }
+                }
+                .img-grid{
+                    margin-bottom: 118px;
+                    @media (max-width: 767.98px) {
+                        margin-bottom: 60px;
+                    }
+                }
+
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    grid-gap: 24px;
+                    margin-bottom: 100px;
+                    @media (max-width: 767.98px) {
+                        margin-bottom: 50px;
+                        grid-gap: 12px;
+                    }
+                    @media (max-width: 575.98px) {
+                        margin-bottom: 24px;
+                        grid-gap: 6px;
+                    }
+                    .item1 {
+                        grid-row: 1 / 3;
+                        grid-column: 1 / 2;
+                        img{
+                            height: 100%;
+                        }
+                      }
+                    .item2 {
+                        grid-row: 1 / 2;
+                        grid-column: 2 / 4;
+
+                      }
+                    .item3 {
+                        grid-row: 2 /3;
+                        grid-column: 2 / 4;
+
+                      }
+  
+                  }
+                  .must-choose {
+                      h4{
+                          @include line-limit(3);
+                          margin-top: 12px;
+                          @media (max-width: 767.98px) {
+                              margin-bottom: 24px;    
+                        }
+                      }
+                  }
+                }
+                #tab2{
+                    h4{
+                    margin-bottom: 28px;
+                    @media (max-width: 767.98px) {
+                        margin-bottom: 14px;
+                    }
+                    text-decoration: underline;
+                    -webkit-text-underline-position: under;
+                    -ms-text-underline-position: below;
+                    text-underline-position: under;
+                    -webkit-text-decoration-color: $blue-co; /* Safari */  
+                    text-decoration-color: $blue-co;
+                    }
+                    img{
+                        margin:80px 0;
+                        @media (max-width: 767.98px) {
+                            margin:40px 0;
+                        }
+                    }
+                    .col{
+                        margin-bottom: $size1;
+                        @media (max-width: 767.98px) {
+                            margin-bottom: $size1mb;
+                        }
+                    }
+                } 
+            }
+        }
+        
+}

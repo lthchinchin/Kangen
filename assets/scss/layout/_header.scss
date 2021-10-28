@@ -1,20 +1,29 @@
 #header {
-  padding: 11.5px 0;
   position: fixed;
   transition: 0.3s ease;
   width: 100%;
   z-index: 10;
   top: 0;
   box-shadow: 1px 0px 6px 0px #00000061;
-  // height: 135px;
-  .hLeft {
+  .header-top-left{
+    p{
+      line-height: 2;
+      @media (max-width: 992px) {
+      font-size: 12px;
+      }
+    }
+  }
+  .header-bottom{
+    padding: 11.5px 0;
+
+      .hLeft {
     // width: 50%;
     .logo {
-      width: 42px;
-      height: 42px;
+      width: 144.32px;
+      height: 75.93px;
       @media (max-width: 992px) {
-        width: $size3;
-        height: $size3;
+        width: 72px;
+        height: 37px;
       }
     }
     .comp-name {
@@ -37,14 +46,22 @@
     // font-weight: bold;
 
     .nav {
-      font-size: $size25;
+      font-size: $size35;
       li {
         margin-left: 35px;
+        a{
+          color: $grey-light-co;
+          &:hover{
+            color:$grey-co ;
+          }
+        }
       }
     }
   }
+  }
+
   .mb-menu {
-    font-size: $size25;
+    font-size: $size3;
     transform: rotate(0);
     transition:0.3s ease ;
   }
@@ -71,8 +88,11 @@
     li{
       margin-bottom: $size3;
       @media (min-width: 1200px) {
-        margin-bottom: $size25;
-        font-size: $size25;
+        margin-bottom: $size3;
+        font-size: $size3;
+      }
+      a{
+        color: $grey-light-co;
       }
     }
   }

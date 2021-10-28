@@ -1,30 +1,32 @@
-<?php 
-    get_header(); 
-    $queried_object = get_queried_object(); 
-    global $post;
+<?php
+get_header();
+$queried_object = get_queried_object();
+global $post;
 ?>
-<div class="page-content w-100 float-left">			
-	<section class="section-blog mb-5">
-	    <div class="container">
-	    	<nav aria-label="breadcrumb">
-	    		<ol class="breadcrumb">
-	    			<li class="breadcrumb-item"><a href="#">Home</a></li>
-	    			<li class="breadcrumb-item active" aria-current="page">Library</li>
-	    		</ol>
-	    	</nav>
-	        <div class="row mt-5">
-	            <div class="ar-left col-12 col-xl-9">
-	            	<?php while (have_posts()) : the_post(); ?>
-	                	<?php get_template_part('template-parts/posts/content', 'default' ); ?>
-		            <?php endwhile; ?>
-	            </div>		
+<div id="all-posts">
+    <scection class="banner">
+        <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-product-list/Banner.jpg"
+            alt="">
+    </scection>
+    <div class="content-nav">
+        <div class="container">
+            <ul class="nav nav-tab">
+                <li>
+                    <h4 class="tab-intro-cus nav-link active">Bài viết</h4>
+                </li>
+                <li>
+                    <h4 class="tab-intro-cus nav-link">Chia sẻ kiến thức
+                    </h4>
+                </li>
+                <li>
+                    <h4 class="tab-intro-cus nav-link">Khởi Nguyên Team</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <section class="content">
 
-	            <div class="col-12 col-xl-3">
-	            	<?php get_sidebar(); ?>
-	            </div>	            
-	        </div>
-
-	    </div>
-	</section>
-</div><!--main-content-->
+    </section>
+</div>
+<!--main-content-->
 <?php get_footer(); ?>

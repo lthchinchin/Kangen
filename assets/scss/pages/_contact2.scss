@@ -1,0 +1,137 @@
+.contact {
+    &-head {
+        height: 350px;
+        background-image: url(../images/footer-bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &__title {
+            font-size: 54px;
+            font-weight: 700;
+        }
+        &__caption {
+            font-size: 20px;
+        }
+    }
+    &-information {
+        padding: 60px 0 40px;
+        &__item {
+            margin-bottom: 30px;
+
+            .icon-box {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 50px;
+                font-size: 40px;
+            }
+            .infor-name {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 24px;
+            }
+            .infor-desc {
+                font-size: 16px;
+                margin-bottom: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
+                color: #8c8c8c;
+                line-height: 1.7;
+            }
+            .infor-value {
+                a {
+                    font-size: 16px;
+                    color: $blue-co;
+                    &:hover {
+                        color: $blue-light-co;
+                    }
+                }
+            }
+        }
+    }
+
+    &-form {
+        padding: 100px 0 60px;
+        background-color: #f3f3f3;
+
+        &__head {
+            position: relative;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 60px;
+                height: 4px;
+                background: #cecece;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0;
+            }
+        }
+
+        &__title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        &__subtitle {
+            font-size: 18px;
+        }
+
+        &__main {
+            max-width: 760px;
+            margin: 0 auto;
+
+            .wpcf7 {
+                &-form {
+                    & > p > label {
+                        width: 100%;
+                    }
+                    &-control {
+                        width: 100%;
+                        outline: none;
+                        background-color: #fff;
+                        border: 1px solid #f3f3f3;
+                        padding: 14px 22px;
+                        font-size: 16px;
+                    }
+                }
+                &-submit {
+                    background: $blue-co;
+                    font-weight: 500;
+                    transition: 0.2s ease-in-out;
+                    &:hover {
+                        background: $blue-light-co;
+                    }
+                }
+                &-response-output {
+                    margin: 0 !important;
+                }
+            }
+        }
+    }
+
+    &-map {
+        height: 500px;
+    }
+
+    &-social {
+        padding: 80px 0;
+        background: #2d2d2d;
+
+        &__list {
+            & > li {
+                & > a {
+                    color: #fff;
+                    font-size: 20px;
+                    &:hover {
+                        color: $blue-light-co;
+                    }
+                }
+                &:not(:first-of-type) {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}
