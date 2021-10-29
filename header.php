@@ -64,8 +64,7 @@
                             <li><a data-navurl="cac-dong-san-pham" class=""
                                     href="<?php echo home_url(); ?>/cac-dong-san-pham">Các dòng sản phẩm</a>
                             </li>
-                            <li><a data-navurl="bai-viet" class=""
-                                    href="<?php echo home_url(); ?>/category/tat-ca-bai-viet/">Bài
+                            <li><a data-navurl="bai-viet" class="" href="<?php echo home_url(); ?>/bai-viet">Bài
                                     viết</a>
                             </li>
                             <li><a data-navurl="lien-he" class="" href="<?php echo home_url(); ?>/lien-he">Liên hệ</a>

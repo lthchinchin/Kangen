@@ -1,5 +1,36 @@
 jQuery(function ($) {
   $(document).ready(function () {
+    // animate appear
+    // $(window).scroll(function () {
+    //   var hT = $('#slide-logo').offset().top,
+    //     hH = $('#slide-logo').outerHeight(),
+    //     wH = $(window).height(),
+    //     wS = $(this).scrollTop();
+    //   console.log(hT);
+    //   if (wS > (hT + hH - wH)) {
+    //     if ($('#slide-logo').css('animation-name') == 'none') {
+    //       $('#slide-logo').css({ "animation-name": "example" });
+    //     }
+    //   }
+    // });
+
+    // close collapse footer
+    if ($(window).width() < 960) {
+      $('h4[href="#sp-collapse"]').click()
+      $('h4[href="#dv-collapse"]').click()
+    }
+
+
+    // active nav posts 
+    var arrUrl = ((window.location.pathname).split('/')).filter(val => val != '')
+    var post_slug = arrUrl[arrUrl.length - 1]
+    $('.nav.nav-posts h4').each(function () {
+      if ($(this).data('posts-slug') == post_slug) {
+        $(this).addClass('active')
+      }
+      // console.log($(this).data('posts-slug'));
+    });
+
     // avtive nav tab js 
     $(`[data-bs-target='#${id_dv}']`).click()
 

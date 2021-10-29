@@ -1,0 +1,26 @@
+#post-detail{
+    padding: $size1 0;
+    text-align: justify;
+
+    @media (max-width: 767.98px) {
+        padding: $size1mb 0;
+    }
+    .next-pre-post{
+        padding: 16px 0;
+        border-top: 1px solid $grey-lighter-co;
+        margin-top: $size3;
+        @media (max-width: 767.98px) {
+            margin-top: $size3mb;
+            padding: 8px 0;
+
+        }
+        &-bar{
+            a:hover{
+                color: $blue-light-co;
+            }
+        }
+        &-left{
+
+        }
+    }
+}

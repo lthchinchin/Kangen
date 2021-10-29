@@ -78,7 +78,8 @@ h5{
 @import "pages/product-list";
 @import "pages/detail-product";
 @import "pages/posts";
-@import "pages/contact2";
+@import "pages/detail-post";
+@import "pages/contact";
 
 @import "reponsive";
 
@@ -172,7 +173,7 @@ a.current-page {
   color: $orange-co;
 }
 .blue-bg{
-  background: $blue-co;
+  background: $blue-co !important;
 }
 
 
@@ -248,8 +249,12 @@ $hv-scale:1.03;
 
 
 .pagenavi{
+  text-align: center;
   line-height: 2;
-  margin-top: $size3;
+  margin-top: $size1;
+  @media (max-width: 991.98px) {
+    margin-top: $size1mb;
+  }
   *{
     margin-right: 28px;    
   }

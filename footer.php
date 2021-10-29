@@ -27,7 +27,7 @@ $the_query_dv = new WP_Query($args);
 </a>
 <div id="footer">
     <div class="container">
-        <div class="row row-cols-lg-4 row-cols-md-1">
+        <div class="row row-cols-lg-4 row-cols-1">
             <div class="col">
                 <div class="top">
                     <a href="<?php echo home_url(); ?>/">
@@ -74,8 +74,9 @@ $the_query_dv = new WP_Query($args);
                 </ul>
             </div>
             <div class="col">
-                <h4>Dịch vụ</h4>
-                <ul class="f-column-nav">
+                <h4 data-bs-toggle="collapse" href="#dv-collapse" role="button" aria-expanded="true">Dịch vụ<i
+                        class="fas ms-1 fs-6 fa-chevron-down"></i></h4>
+                <ul class="f-column-nav collapse show" id="dv-collapse">
                     <?php $count = 1;  ?>
                     <?php while ($the_query_dv->have_posts()) : $the_query_dv->the_post(); ?>
                     <li><a
@@ -87,17 +88,17 @@ $the_query_dv = new WP_Query($args);
                 </ul>
             </div>
             <div class=" col">
-                <h4>Các dòng sản phẩm</h4>
-                <ul class="f-column-nav">
-                    <ul class="f-column-nav">
-                        <?php $count = 1;  ?>
-                        <?php while ($the_query_product->have_posts()) : $the_query_product->the_post(); ?>
-                        <li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title(); ?></a>
-                        </li>
-                        <?php $count++; ?>
-                        <?php endwhile; ?>
-                        <?php wp_reset_query(); ?>
-                    </ul>
+                <h4 data-bs-toggle="collapse" href="#sp-collapse" role="button" aria-expanded="true">Sản phẩm<i
+                        class="fas ms-1 fs-6 fa-chevron-down"></i></h4>
+                <ul class="f-column-nav collapse show" id="sp-collapse">
+                    <?php $count = 1;  ?>
+                    <?php while ($the_query_product->have_posts()) : $the_query_product->the_post(); ?>
+                    <li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title(); ?></a>
+                    </li>
+                    <?php $count++; ?>
+                    <?php endwhile; ?>
+                    <?php wp_reset_query(); ?>
+                </ul>
 
                 </ul>
             </div>

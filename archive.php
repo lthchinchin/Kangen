@@ -1,31 +1,55 @@
 <?php
 get_header();
-$queried_object = get_queried_object();
-global $post;
+?>
+<?php
+$category = get_category(get_query_var('cat'));
+$cat_id = $category->cat_ID;
+$args = array(
+    'post_type' => 'post',
+    'posts_per_page' => -1,
+    'orderby' => 'date',
+    'cat' => $cat_id,
+    'order' => 'DESC',
+    'paged' => $paged
+);
+$the_query = new WP_Query($args);
+
 ?>
 <div id="all-posts">
     <scection class="banner">
         <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-product-list/Banner.jpg"
             alt="">
     </scection>
-    <div class="content-nav">
-        <div class="container">
-            <ul class="nav nav-tab">
-                <li>
-                    <h4 class="tab-intro-cus nav-link active">Bài viết</h4>
-                </li>
-                <li>
-                    <h4 class="tab-intro-cus nav-link">Chia sẻ kiến thức
-                    </h4>
-                </li>
-                <li>
-                    <h4 class="tab-intro-cus nav-link">Khởi Nguyên Team</h4>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php get_template_part("template-parts/nav_top", "post"); ?>
     <section class="content">
+        <div class="container">
 
+            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <div class="post-item border ">
+                <div class="row">
+                    <div class="col-md-4 col-12">
+                        <div class="wrapper">
+                            <a href="<?php echo get_permalink() ?>">
+                                <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() :  bloginfo('template_directory') . '/assets/images/thumbnail.jpg' ?>"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-12">
+                        <div class="content">
+                            <p class="title fw-bold"><a class="grey-co"
+                                    href="<?php echo get_permalink() ?>"><?php echo get_the_title(); ?></a></p>
+                            <p class="short-desc"><?php echo wp_strip_all_tags(get_the_content()); ?></p>
+                            <p class="see-detail "><a href="<?php echo get_permalink() ?>" class="text-white">Xem thêm
+                                    ></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endwhile; ?>
+            <?php wp_reset_query(); ?>
+
+        </div>
     </section>
 </div>
 <!--main-content-->
