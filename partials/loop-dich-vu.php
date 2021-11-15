@@ -9,7 +9,7 @@ $the_query = new WP_Query($args);
 ?>
 <div id="service-page">
     <section class="banner">
-        <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-intro/Banner.jpg" alt="">
+        <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-service/Banner.jpg" alt="">
     </section>
     <section class="nav-content">
         <div class="container">

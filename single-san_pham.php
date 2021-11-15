@@ -12,6 +12,7 @@ $args = array(
     'orderby' => 'rand',
 );
 $the_query_recomend_pd = new WP_Query($args);
+$post_slug = $post->post_name;
 ?>
 <div id="detail-product">
     <section class="banner">
@@ -20,6 +21,7 @@ $the_query_recomend_pd = new WP_Query($args);
     <section class="content">
         <div class="top">
             <div class="container">
+                <h1 class="text-center blue-light-co fw-bold"><?php the_title() ?></h1>
                 <?php the_content(); ?>
                 <div class="row row-cols-md-2 row-cols-1 mt-md-5 mt-3">
                     <?php if ($pd_detail['mo_ta']) { ?>
@@ -96,10 +98,83 @@ $the_query_recomend_pd = new WP_Query($args);
 
                         </div>
                     </div>
-
+                    <?php
+                    if (in_array($post_slug, array('thuc-uong-kangen-ukon'))) { ?>
                     <div class="tab-pane fade" id="specification">
                         <div class="container">
-                            <h2 class="mb-md-4 mb-3">Thông số kĩ thuật</h2>
+                            <h2 class="mb-md-4 mb-3">Thông số kỹ thuật</h2>
+                            <table class="table">
+                                <tbody class="thucpham">
+                                    <tr>
+                                        <td></td>
+                                        <td><b>Thành phần dinh dưỡng</b></td>
+                                        <td><b>% Giá trị hàng ngày</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lượng calo: </td>
+                                        <td>10</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tổng số chất béo:</td>
+                                        <td>0.5 g </td>
+                                        <td>1%*</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tổng carbohydrate:</td>
+                                        <td>1 g </td>
+                                        <td>1%*</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chất xơ:</td>
+                                        <td>1 g </td>
+                                        <td>4%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vitamin C:</td>
+                                        <td>4 mg</td>
+                                        <td>4%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vitamin E:</td>
+                                        <td>4 mg</td>
+                                        <td>27%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thiamin:</td>
+                                        <td>5 mg</td>
+                                        <td>417%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Riboflavin:</td>
+                                        <td>24 mg</td>
+                                        <td>1846%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Niacin:</td>
+                                        <td>1 mg</td>
+                                        <td>6%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Folate:</td>
+                                        <td>20% </td>
+                                        <td>1846%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vitamin B-12:</td>
+                                        <td>18 mcg </td>
+                                        <td>750%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>* Phần trăm giá trị hàng ngày dựa trên chế độ ăn 2.000 calo.</p>
+                        </div>
+                    </div>
+                    <?php } else {
+                    ?>
+                    <div class="tab-pane fade" id="specification">
+                        <div class="container">
+                            <h2 class="mb-md-4 mb-3">Thông số kỹ thuật</h2>
                             <table class="table">
                                 <tbody>
                                     <tr>
@@ -154,6 +229,8 @@ $the_query_recomend_pd = new WP_Query($args);
                             </table>
                         </div>
                     </div>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>
@@ -167,7 +244,9 @@ $the_query_recomend_pd = new WP_Query($args);
                 <?php
                     foreach ($pd_detail['album'] as $value) {
                     ?>
-                <img class="mb-md-4 mb-2" src="<?php echo $value ?>">
+                <div class="col">
+                    <img class="mb-md-4 mb-2 w-100" src="<?php echo $value ?>">
+                </div>
                 <?php } ?>
                 <?php } ?>
             </div>
@@ -191,7 +270,8 @@ $the_query_recomend_pd = new WP_Query($args);
         </div>
         <div class="bottom">
             <div class="container">
-                <div class="owl-carousel" data-carousel-items="6" data-tablet="4" data-mobile="2" data-dots="false">
+                <div class="owl-carousel" data-carousel-items="6" data-tablet="4" data-mobile="2" data-loop="true"
+                    data-dots="false">
                     <div><img src="<?php bloginfo('template_directory'); ?>/assets/images/page-home/chungchi1.png">
                     </div>
                     <div><img src="<?php bloginfo('template_directory'); ?>/assets/images/page-home/chungchi2.png">
@@ -211,18 +291,20 @@ $the_query_recomend_pd = new WP_Query($args);
     <section class="product-recomend">
         <div class="container">
             <h2 class="text-center mb-md-4 mb-3">Sản phẩm liên quan</h2>
-            <div class="owl-carousel" data-nav="true" data-margin="24" data-carousel-items="4" data-tablet="3"
-                data-mobile="2" data-dots="false">
+            <div class="owl-carousel" data-loop="true" data-autoplay="true" data-nav="true" data-margin="24"
+                data-carousel-items="4" data-tablet="3" data-mobile="2" data-dots="false">
                 <?php
                 while ($the_query_recomend_pd->have_posts()) : $the_query_recomend_pd->the_post(); ?>
                 <?php if ($current_id != get_the_ID()) {  ?>
-                <div class="product-recomend-item">
-                    <img
-                        src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() :  bloginfo('template_directory') . '/assets/images/thumbnail.jpg' ?>">
-                    <h4>
-                        <?php echo get_the_title(); ?>
-                    </h4>
-                </div>
+                <a href="<?php echo get_permalink() ?>">
+                    <div class="product-recomend-item">
+                        <img
+                            src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() :  bloginfo('template_directory') . '/assets/images/thumbnail.jpg' ?>">
+                        <h4>
+                            <?php echo get_the_title(); ?>
+                        </h4>
+                    </div>
+                </a>
                 <?php } ?>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>

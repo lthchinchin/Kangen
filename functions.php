@@ -7,14 +7,15 @@
  */
 require get_template_directory() . '/inc/init.php';
 
-add_action('after_setup_theme', 'remove_admin_bar');
-function remove_admin_bar()
-{
-    if (!current_user_can('administrator') && !is_admin()) {
-        show_admin_bar(false);
-    }
-}
+// add_action('after_setup_theme', 'remove_admin_bar');
+// function remove_admin_bar()
+// {
+//     if (!current_user_can('administrator') && !is_admin()) {
+//         show_admin_bar(false);
+//     }
+// }
 
+show_admin_bar(false);
 // Register Custom Post Type
 function custom_post_type_sanpham()
 {

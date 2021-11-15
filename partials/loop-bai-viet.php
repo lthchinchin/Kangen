@@ -4,11 +4,13 @@ get_header();
 <?php
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 // $sticky = get_option('sticky_posts');
+
 $args = array(
     'post_type' => 'post',
-    'posts_per_page' => 1,
+    'posts_per_page' => 5,
     'orderby' => 'date',
     'order' => 'DESC',
+    'category__not_in' => array(3, 4), // array, not a string
     // 'post__not_in' => $sticky, // get post sticky
     'paged' => $paged
 );
@@ -16,7 +18,7 @@ $the_query = new WP_Query($args);
 ?>
 <div id="all-posts">
     <scection class="banner">
-        <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-product-list/Banner.jpg"
+        <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-contact/BannerBaiviet.jpg"
             alt="">
     </scection>
     <?php get_template_part("template-parts/nav_top", "post"); ?>

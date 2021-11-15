@@ -1,5 +1,14 @@
 .content-nav{
     background-color: $blue-co;
+    @media (max-width: 575.98px) {
+    .container{
+            padding: 0 6px;
+        }
+        li{
+            flex-grow: 1;
+        }
+    }
+    
     .nav-tab{
         .tab-intro-cus{
             cursor: pointer;

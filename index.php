@@ -26,7 +26,7 @@ $the_query_post = new WP_Query($args);
 ?>
 <div id="home-page">
     <section class="banner-home">
-        <div data-carousel-items="1" data-loop="true" data-autoplay="true" data-autotime="3000"
+        <div data-carousel-items="1" data-loop="true" data-autoplay="true" data-dots="false" data-autotime="3000"
             class="owl-carousel banner-wrapper">
             <img src="<?php bloginfo('template_directory'); ?>/assets/images/page-home/Banner.jpg">
             <img src="<?php bloginfo('template_directory'); ?>/assets/images/page-home/Banner2.jpg">
@@ -105,7 +105,7 @@ $the_query_post = new WP_Query($args);
                         Chất lượng - tin cậy
                         đến từ dịch vụ - sản phẩm
                     </h2>
-                    <p class="grey-light-co">Khởi Nguyên Water hận hạnh được mang đến 1 trong những dòng sản phẩm tốt
+                    <p class="grey-light-co">Khởi Nguyên Water hân hạnh được mang đến 1 trong những dòng sản phẩm tốt
                         nhất dành cho sức khỏe
                         ngưới
                         tiêu dùng hiện nay. Bằng công nghệ tiên tiến nhất đến từ Nhật Bản, phục vụ sức khỏe người Việt
@@ -118,13 +118,14 @@ $the_query_post = new WP_Query($args);
                             <p class="title fw-bold text-uppercase">
                                 <span class="blue-light-co">1. </span>sản phẩm chính hãng 100% - chất lượng, an toàn
                             </p>
-                            <i class="fas fa-plus" data-bs-toggle="collapse" data-bs-target="#introContent1"></i>
+                            <i class="fas fa-minus" data-bs-toggle="collapse" data-bs-target="#introContent1"
+                                aria-expanded="true"></i>
                         </div>
-                        <div id="introContent1" class="bottom grey-light-co collapse">
+                        <div id="introContent1" class="bottom grey-light-co collapse show">
                             Sản phẩm được phân phối chính thức 100% từ tập đoàn Enagic chuyên sản xuất các máy ion hóa
                             nước bền nhất thế giới (với Chứng Nhận ISO & Y Tế).<br> Dòng sản phẩm LeveLuk là dòng sản
                             phẩm
-                            lon hóa nước duy nhất được chấp thuận sử dụng làm
+                            ion hóa nước duy nhất được chấp thuận sử dụng làm
                             thiết bị y khoa tại các bệnh viện Nhật Bản cho đến nay.
                         </div>
                     </div>
@@ -162,12 +163,12 @@ $the_query_post = new WP_Query($args);
     </section>
     <section class="services-list">
         <div class="container">
-            <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 ">
+            <div class="row row-cols-lg-4 row-cols-1 ">
                 <div class="col-lg-6">
                     <h1 class="blue-light-co">
                         CÁC GÓI DỊCH VỤ CHUYÊN NGHIỆP
                     </h1>
-                    <p class="mb-md-0 mb-3">
+                    <p class="mb-lg-0 mb-3">
                         Không chỉ là 1 trải nghiệm thực sự tốt, chúng tôi còn mang đến cho quý khách hàng những gói dịch
                         vụ chuyên nghiệp nhất để duy trì và cải thiện hơn những phát sinh trong quá trình sử dụng
                     </p>
@@ -203,7 +204,7 @@ $the_query_post = new WP_Query($args);
     </section>
     <section class="our-project">
         <div class="container">
-            <div class="row row-cols-lg-3 row-cols-md-2">
+            <div class="row row-cols-3 ">
                 <div class="col">
                     <div class="content">
                         <span>
@@ -247,7 +248,8 @@ $the_query_post = new WP_Query($args);
         </div>
         <div class="bottom">
             <div class="container">
-                <div class="owl-carousel" data-carousel-items="6" data-tablet="4" data-mobile="2" data-dots="false">
+                <div class="owl-carousel" data-carousel-items="6" data-tablet="4" data-mobile="2" data-loop="true"
+                    data-dots="false">
                     <div><img src="<?php bloginfo('template_directory'); ?>/assets/images/page-home/chungchi1.png">
                     </div>
                     <div><img src="<?php bloginfo('template_directory'); ?>/assets/images/page-home/chungchi2.png">
@@ -269,22 +271,28 @@ $the_query_post = new WP_Query($args);
             <h1 class="blue-light-co text-center mb-4 mb-md-5">
                 TIN TỨC - BÀI VIẾT
             </h1>
-            <div class="owl-carousel" data-autoplay="true" data-margin="24" data-carousel-items="3" data-tablet="2"
-                data-mobile="1" data-dots="false">
+            <div class="owl-carousel modes-list" data-loop="true" data-autoplay="true" data-dots="false" data-nav="true"
+                data-margin="24" data-carousel-items="3" data-tablet="2" data-mobile="1">
                 <?php while ($the_query_post->have_posts()) : $the_query_post->the_post(); ?>
-                <a href="<?php echo get_permalink() ?>">
-                    <div class="news-item">
-                        <img class=""
-                            src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() :  bloginfo('template_directory') . '/assets/images/thumbnail.jpg' ?>"
-                            alt="">
-                        <h4 class="fw-bold"><?php echo get_the_title(); ?></h4>
-                        <h5><i class="far fa-calendar-alt me-3"></i><?php echo get_the_date('Y-m-d H:i:s'); ?></h5>
+                <div class="mode-item">
+                    <div class="top overflow-hidden">
+                        <a class="grey-co" href="<?php echo get_permalink() ?>">
+                            <img class="cardhover imghover-op"
+                                src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() :  bloginfo('template_directory') . '/assets/images/thumbnail.jpg' ?>">
+                        </a>
                     </div>
-                    <?php endwhile; ?>
-                    <?php wp_reset_query(); ?>
-                </a>
+                    <div class="bottom">
+                        <h4 class="fw-bold"><?php echo get_the_title(); ?></h4>
+
+                        <h5><i class="far fa-calendar-alt me-3"></i><?php echo get_the_date('Y-m-d H:i:s'); ?></h5>
+
+                    </div>
+                </div>
+                <?php endwhile; ?>
+                <?php wp_reset_query(); ?>
             </div>
-            <button class="btn btn-cus d-block mx-auto"><a href="<?php echo home_url() ?>/gioi-thieu">XEM THÊM<i
+
+            <button class="btn btn-cus d-block mx-auto"><a href="<?php echo home_url() ?>/bai-viet">XEM THÊM<i
                         class="ms-2 fas fa-arrow-right"></i></a></button>
         </div>
     </section>

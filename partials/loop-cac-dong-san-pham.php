@@ -4,6 +4,8 @@ $args = array(
     'post_type' => 'san_pham',
     'orderby' => 'date',
     'order' => 'ASC',
+    'posts_per_page' => -1,
+
 );
 $the_query_product = new WP_Query($args);
 ?>
@@ -15,7 +17,7 @@ $the_query_product = new WP_Query($args);
     <section class="content">
         <div class="container">
 
-            <h2 class="text-center">Dưới đây là danh mục các dòng sản phẩm Kangen được phân phối chính hãng bởi Khỏi
+            <h2 class="text-center">Dưới đây là danh mục các dòng sản phẩm Kangen được phân phối chính hãng bởi Khởi
                 Nguyên
                 Water</h2>
 

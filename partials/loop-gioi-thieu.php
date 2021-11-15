@@ -35,14 +35,15 @@
                     <img class="w-100 boss"
                         src="<?php bloginfo('template_directory'); ?>/assets/images/page-intro/boss.jpg" alt="">
                     <h2 class="text-center">Tại sao phải chọn máy lọc nước Kangen Enagic?</h2>
-                    <p>Không giống như những chiếc máy lọc nước thông thường khác, máy lọc nước Kangen là dòng máy lọc
+                    <p style="text-align:justify;">Không giống như những chiếc máy lọc nước thông thường khác, máy lọc
+                        nước Kangen là dòng máy lọc
                         nước
                         cao cấp nhất trong tất cả các thương hiệu khác về ngành lọc nước. Máy không chỉ giúp cung cấp
                         một
                         nguồn nước sạch mà còn giữ lại các vi khoáng, ion khoáng cực kỳ có lợi cho cơ thể.
                         Theo kiểm chứng của Bộ Y Tế Nhật Bản, máy điện giải Kangen ra đời nhằm phục vụ, hỗ trợ điều trị
                         các
-                        loại bệnh mạn tính như: Ung thư, tim mạch, gout, tiểu đương, loãng xương,... Được các bác sĩ và
+                        loại bệnh mãn tính như: Ung thư, tim mạch, gout, tiểu đương, loãng xương,... Được các bác sĩ và
                         chuyên gia sức khỏe khuyên dùng mỗi ngày để cải thiện và nâng cao tình trạng của cơ thể,</p>
                     <div class="grid-container">
                         <div class="item1"><img class="w-100"
@@ -95,7 +96,8 @@
                     <div class="row row-cols-md-2 row-cols-1">
                         <div class="col">
                             <h4>Dồi dào hydro phân tử, chống oxy hóa cực mạnh</h4>
-                            <p>Nước Kangen qua quá trình điện phân có chứa hydro hoạt tính cao, có
+                            <p style="text-align:justify;">Nước Kangen qua quá trình điện phân có chứa hydro hoạt tính
+                                cao, có
                                 tác dụng trung hòa các gốc tự do và oxy hoạt tính trong cơ thể. Chính vì
                                 vậy, nước Kangen™ có tác dụng chống lại quá trình oxy hóa vô cùng hiệu
                                 quả.
@@ -108,7 +110,8 @@
                         </div>
                         <div class="col">
                             <h4>Giàu tính kiềm tự nhiên</h4>
-                            <p>Nước Kangen được điện phân từ nguồn nước máy, thanh lọc tất cả các
+                            <p style="text-align:justify;">Nước Kangen được điện phân từ nguồn nước máy, thanh lọc tất
+                                cả các
                                 tạp chất có hại. nước Kangen tạo tính Kiềm cao giúp trung hòa Axit, thanh
                                 lọc cơ thể và đồng thời vẫn giữ nguyên các khoáng chất có lợi cho sức
                                 khỏe.<br>
@@ -119,7 +122,8 @@
                         </div>
                         <div class="col">
                             <h4>Kích thước phân tử nước siêu nhỏ</h4>
-                            <p>Nước Kangen trải qua quá trình điện phân, các phân tử nước đã được
+                            <p style="text-align:justify;">Nước Kangen trải qua quá trình điện phân, các phân tử nước đã
+                                được
                                 tách và cấu trúc lại kích thước các cụm phân tử nước giảm xuống rất
                                 nhiều, chỉ bằng khoảng 1/4 so với cụm phân tử nước thông thường. Chính
                                 tác dụng này giúp cho nước Kangen™ có tác dụng thẩm thấu mạnh, vận
@@ -131,7 +135,8 @@
                         </div>
                         <div class="col">
                             <h4>Giàu vi khoáng tự nhiên</h4>
-                            <p>Nước Kangen chứa hàm lượng Na, Ca, K, Zn, P...dồi dào. Đây đều là những vi khoáng thiết
+                            <p style="text-align:justify;">Nước Kangen chứa hàm lượng Na, Ca, K, Zn, P...dồi dào. Đây
+                                đều là những vi khoáng thiết
                                 yếu cho sự sống của cơ thể.<br>
                                 Để tạo ra nguồn nước “hoàn nguyên” giàu hydro chất lượng không dễ
                                 dàng. Nước Kangen đích thực chỉ có thể được sản xuất từ máy lọc nước

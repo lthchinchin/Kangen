@@ -30,6 +30,13 @@
         }
         .bottom{
             background-color: $mint-co;
+            .thucpham{
+                tr{
+                    td:nth-child(3) {
+                       border-left: 1px     solid $grey-lighter-co;
+                      }
+                }
+            }
             .tab{
                 // padding: 0 80px;
                 padding: 37px 80px;

@@ -2,11 +2,12 @@
 get_header();
 ?>
 <?php
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $category = get_category(get_query_var('cat'));
 $cat_id = $category->cat_ID;
 $args = array(
     'post_type' => 'post',
-    'posts_per_page' => -1,
+    'posts_per_page' => 5,
     'orderby' => 'date',
     'cat' => $cat_id,
     'order' => 'DESC',
@@ -17,7 +18,7 @@ $the_query = new WP_Query($args);
 ?>
 <div id="all-posts">
     <scection class="banner">
-        <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-product-list/Banner.jpg"
+        <img class="w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/page-contact/Banner-achive1.jpg"
             alt="">
     </scection>
     <?php get_template_part("template-parts/nav_top", "post"); ?>
@@ -47,6 +48,7 @@ $the_query = new WP_Query($args);
                 </div>
             </div>
             <?php endwhile; ?>
+            <?php prw_wp_corenavi($the_query, $paged); ?>
             <?php wp_reset_query(); ?>
 
         </div>

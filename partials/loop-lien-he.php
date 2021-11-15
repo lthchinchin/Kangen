@@ -6,7 +6,7 @@
     <section class="content">
         <div class="container">
             <img id="slide-logo" class="center-logo"
-                src="<?php bloginfo('template_directory'); ?>/assets/images/logo.png">
+                src="<?php bloginfo('template_directory'); ?>/assets/images/logo-big.png">
             <h4 class="fw-bold text-center mb-md-3 mb-2">MÁY LỌC NƯỚC KANGEN _ KHỞI NGUYÊN WATER</h4>
             <div class="row px-md-4 px-3">
                 <div class="col-md-6">
@@ -20,11 +20,12 @@
                 </div>
             </div>
             <div class="contact-form">
+
+
                 <div class="row">
                     <div class="col-lg-7">
-                        <label for="">Họ và tên *</label>
-                        <input type="text" class="ho_ten form-control">
-                        <input type="submit" value="Gửi" class="btn btn-cus2 blue-bg text-white"></input>
+                        <?php echo do_shortcode('[contact-form-7 id="127" title="Form liên hệ 1"]') ?>
+
                     </div>
                     <div class="col-lg-5">
                         <div>
@@ -49,18 +50,18 @@
 <?php get_footer(); ?>
 <script>
 // animate appear
-$(window).scroll(function() {
-    var hT = $('#slide-logo').offset().top,
-        hH = $('#slide-logo').outerHeight(),
-        wH = $(window).height(),
-        wS = $(this).scrollTop();
-    console.log(hT);
-    if (wS > (hT + hH - wH)) {
-        if ($('#slide-logo').css('animation-name') == 'none') {
-            $('#slide-logo').css({
-                "animation-name": "example"
-            });
-        }
-    }
-});
+// $(window).scroll(function() {
+//     var hT = $('#slide-logo').offset().top,
+//         hH = $('#slide-logo').outerHeight(),
+//         wH = $(window).height(),
+//         wS = $(this).scrollTop();
+//     console.log(hT);
+//     if (wS > (hT + hH - wH)) {
+//         if ($('#slide-logo').css('animation-name') == 'none') {
+//             $('#slide-logo').css({
+//                 "animation-name": "example"
+//             });
+//         }
+//     }
+// });
 </script>

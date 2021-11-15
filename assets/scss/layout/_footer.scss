@@ -17,18 +17,17 @@
     font-size: $size3;
   }
 }
-#call_me {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.left-bubble {
   position: fixed;
   z-index: 10;
   width: 50px;
   height: 50px;
-  background: $blue-co;
-  bottom: 30px;
   left: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: 0.3s ease;
+
   &:hover {
     background: $blue-light-co;
   }
@@ -36,6 +35,23 @@
     font-size: $size3;
   }
 }
+#call_me{
+  transition: 0.4s ease;
+  background-color:greenyellow;
+  bottom: 100px;
+  &:hover {
+    background: rgb(208, 255, 99);
+  }
+
+}
+#my_fanpage{
+  background: $blue-co;
+  &:hover {
+    background: $blue-light-co;
+  }
+  bottom: 30px;
+}
+
 #footer {
     padding: 56px 0 15px 0;
     background: url('../images/footer-bg.jpg');

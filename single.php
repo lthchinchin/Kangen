@@ -4,7 +4,8 @@ get_header();
 <div id="post-detail">
     <div class="container">
         <h1 class="mb-md-4 mb-3"><?php echo get_the_title(); ?></h1>
-        <img class="w-100 mb-md-3 mb-2" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+        <img style="max-width:100%" class="d-block mx-auto mb-md-3 mb-2"
+            src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
         <p>
             <?php echo get_the_content(); ?>
         </p>

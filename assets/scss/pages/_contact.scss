@@ -7,8 +7,10 @@
     }
   img.center-logo{
       position: relative;
-      top: 250px;
-      opacity: 0;
+      // top: 250px;
+      top: 0;
+      // opacity: 0;
+      opacity: 1;
     //   animation-name: example;
       animation-duration: 1s;
       animation-fill-mode: forwards;
@@ -41,8 +43,18 @@
         margin-bottom: 40px;
 
     }
+    label{
+        width: 100%;
+    }
       input[type='submit']{
           padding: 12px 30px;
+          border-radius: 6px;
+          box-shadow: 0 5px 3px 0px #8484844d;
+          background: #024F9E !important;
+          border: none;
+        color: white;
+        font-weight: bold;
+        margin-top: 12px;
       }
       input{
           margin-bottom: 12px;

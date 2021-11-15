@@ -1,4 +1,46 @@
 #home-page{
+
+    .owl-stage-outer{
+        padding-bottom: 70px ;
+        @media (max-width: 991.98px) {
+            padding-bottom: 35px ;
+        }
+    }
+    .mode-item{
+        // border: 1px solid $grey-co;
+        border-radius:8px ;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 7px 12px 0px #b1b1b1bd;
+        height: 100%;
+        @media (max-width: 991.98px) {
+            box-shadow: 0px 3px 8px 0px #b1b1b1bd;
+        }
+        h3 a{
+            @include line-limit(2);
+        }
+        &:hover{
+       
+            h3 a{
+                color: $blue-light-co;
+            }
+        }
+        .top{
+            border-radius:8px 8px 0 0 ;
+            img{
+                height: 304px;
+                object-fit: cover;
+            }
+            // margin-bottom: 30px;
+            // @media (max-width: 991.98px) {
+            //     margin-bottom: 16px;
+            // }
+        }
+        .bottom{
+            padding: 30px 12px 12px 12px;
+        }
+    }
+
     section.intro-direct{
         padding: 80px 0;
         @media (max-width: 991.98px) {
@@ -31,47 +73,13 @@
             }
         }
         .modes-list{
-            .owl-stage-outer{
-                padding-bottom: 70px ;
-                @media (max-width: 991.98px) {
-                    padding-bottom: 35px ;
-                }
-            }
-            .mode-item{
-                // border: 1px solid $grey-co;
-                border-radius:8px ;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                box-shadow: 0px 7px 12px 0px #b1b1b1bd;
-                height: 100%;
-                @media (max-width: 991.98px) {
-                    box-shadow: 0px 3px 8px 0px #b1b1b1bd;
-                }
-                &:hover{
-                    h3 a{
-                        color: $blue-light-co;
-                        @include line-limit(2);
-                    }
-                }
-                .top{
-                    border-radius:8px 8px 0 0 ;
-                    height: 100%;
-                    img{
-                        max-height: 304px;
-                        object-fit: cover;
-                    }
-                }
-                .bottom{
-                    padding: 30px 12px 12px 12px;
-                }
-            }
+
         }
     }
     section.company-intro{
-        padding: 80px;
+        padding: 80px ;
         @media (max-width: 991.98px) {
-            padding: 40px;
+            padding: 40px 0;
         }
 
         h1 , img{
@@ -113,7 +121,7 @@
         background: $mint-co;
         padding: 75px 45px;
         @media (max-width: 991.98px) {
-            padding: 35px 25px;
+            padding: 35px 0;
         }
         p{
             text-align: justify;
@@ -200,29 +208,33 @@
         @media (max-width: 991.98px) {
             padding: 40px 12px;
         }
-        .news-item{
-            img{
-                border-radius: 8px;
-                margin-bottom: 24px;
-                height: 255px;
-                object-fit: cover;
-                @media (max-width: 575.98px) {
-                    height: 230px;
-                }
-                @media (max-width: 767.98px) {
-                    height: 200px;
-                    margin-bottom: 12px;
-                }
-            }
-            h4{
-                margin-bottom: 12px;
-                @include line-limit(2);
-                @media (max-width: 767.98px) {
-                    margin-bottom: 6px;
-                }
-
-            }
+        .owl-stage-outer{
+                padding-bottom: 24px ;
         }
+        // .news-item{
+        //     box-shadow: 0px 7px 12px 0px #b1b1b1bd;
+        //     img{
+        //         border-radius: 12px;
+        //         margin-bottom: 24px;
+        //         height: 255px;
+        //         object-fit: cover;
+        //         @media (max-width: 575.98px) {
+        //             height: 230px;
+        //         }
+        //         @media (max-width: 767.98px) {
+        //             height: 200px;
+        //             margin-bottom: 12px;
+        //         }
+        //     }
+        //     h4{
+        //         margin-bottom: 12px;
+        //         @include line-limit(2);
+        //         @media (max-width: 767.98px) {
+        //             margin-bottom: 6px;
+        //         }
+
+        //     }
+        // }
         button{
             margin-top: $size1;
             @media (max-width: 991.98px) {
@@ -247,6 +259,7 @@ section.certificate{
         }
     }
     .bottom{
+        background-color: $mint-co;
         padding: 24px 0;
         border-bottom: 1px solid $grey-lighter-co ;
         .owl-carousel .owl-item img {

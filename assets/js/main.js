@@ -1,6 +1,6 @@
 jQuery(function ($) {
   $(document).ready(function () {
-    // animate appear
+    // animate appear viet tren page lien he
     // $(window).scroll(function () {
     //   var hT = $('#slide-logo').offset().top,
     //     hH = $('#slide-logo').outerHeight(),
@@ -36,6 +36,7 @@ jQuery(function ($) {
 
     // home colapse change btn
     $('.card-intro i.fas').click(function () {
+
       console.log($(this).attr('aria-expanded'));
       if ($(this).attr('aria-expanded') == 'true') {
         $(this).toggleClass('fa-plus fa-minus');
@@ -80,15 +81,17 @@ jQuery(function ($) {
     var header = document.getElementById("header");
     var toTop = document.getElementById("bottom_to_top");
     var callMe = document.getElementById("call_me");
-    // console.log(toTop.style);
+    var myFanpage = document.getElementById("my_fanpage");
     function myFunction() {
       // console.log(this.scrollY);
       if (this.scrollY > 100) {
         toTop.style.bottom = "30px";
         callMe.style.left = "30px";
+        myFanpage.style.left = "30px";
       } else {
         toTop.style.bottom = "-100px";
         callMe.style.left = "-100px";
+        myFanpage.style.left = "-100px";
       }
 
       if (this.oldScroll > this.scrollY) {
@@ -117,7 +120,8 @@ jQuery(function ($) {
           autoplay: $(this).data("autoplay"),
           // autoplay: true,
           items: $(this).data("carousel-items"),
-          nav: $(this).data("nav"),
+          // nav: $(this).data("nav"),
+          nav: false,
           dots: $(this).data("dots"),
           center: $(this).data("center"),
           loop: $(this).data("loop"),

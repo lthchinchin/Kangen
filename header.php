@@ -15,7 +15,7 @@
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" type="image/png"
-        href="<?php bloginfo('template_directory'); ?>/assets/images/faicon.png" />
+        href="<?php bloginfo('template_directory'); ?>/assets/images/favicon.png" />
     <?php wp_head(); ?>
 </head>
 
@@ -35,8 +35,8 @@
                 <div class="header-top-right d-flex align-items-center">
                     <a href="https://www.facebook.com/KhoiNguyenWater" target="_blank"><i
                             class="ms-2 text-white fab fa-facebook"></i></a>
-                    <i class="ms-2 fab fa-instagram"></i>
-                    <i class="ms-2 fab fa-youtube"></i>
+                    <a href="#"><i class="ms-2 text-white fab fa-instagram"></i></a>
+                    <a href="#"><i class="ms-2 text-white fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -85,8 +85,10 @@
             <li><a data-navurl="cac-dong-san-pham" class="" href="<?php echo home_url(); ?>/cac-dong-san-pham">Các dòng
                     sản phẩm</a>
             </li>
-            <li><a data-navurl="lien-he" class="" href="<?php echo home_url(); ?>/lien-he">Bài
+            <li><a data-navurl="bai-viet" class="" href="<?php echo home_url(); ?>/bai-viet">Bài
                     viết</a>
+            </li>
+            <li><a data-navurl="lien-he" class="" href="<?php echo home_url(); ?>/lien-he">Liên hệ</a>
             </li>
         </ul>
     </div>

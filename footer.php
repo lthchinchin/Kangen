@@ -20,11 +20,18 @@ $the_query_dv = new WP_Query($args);
         <i class="fas fa-arrow-up text-white"></i>
     </div>
 </a>
-<a href="tel:07090033177">
-    <div id="call_me">
+<a href="tel:0905028646">
+    <div class="left-bubble" id="call_me">
         <i class="fas fa-phone-alt text-white"></i>
     </div>
 </a>
+<a href="https://www.facebook.com/KhoiNguyenWater" target="blank_">
+    <div class="left-bubble" id="my_fanpage">
+        <i class="fab fa-facebook-f text-white"></i>
+    </div>
+</a>
+
+
 <div id="footer">
     <div class="container">
         <div class="row row-cols-lg-4 row-cols-1">
@@ -46,9 +53,9 @@ $the_query_dv = new WP_Query($args);
                         khoinguyenwater@gmail.com</a>
                 </div>
                 <div class="bottom">
-                    <iframe style="max-width: 100%;"
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKhoiNguyenWater&tabs=timeline&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=713028052597846"
-                        width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKhoiNguyenWater%2F&tabs=timeline&width=240&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="240" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                         allowfullscreen="true"
                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
@@ -105,7 +112,7 @@ $the_query_dv = new WP_Query($args);
         </div>
 
         <div class="text-center text-white mt-3 pt-3 border-top" style="border-color: #FFFFFF1A !important;">
-            © Copyright KhoiNguyenWater. Design by BIti.vn
+            © Copyright KhoiNguyenWater. Design by BITI.vn
         </div>
     </div>
 </div>
@@ -119,7 +126,6 @@ var id_dv = '<?php echo $_GET['dv'] ? $_GET['dv'] : ""  ?>'
 </script>
 <?php wp_footer(); ?>
 </div>
-<a href="javascript:;" id="goTop" class="bd-circle t-center"></a>
 </body>
 
 </html>
